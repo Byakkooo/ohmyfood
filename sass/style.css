@@ -1,0 +1,78 @@
+* {
+  font-family: "Raleway", sans-serif;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+:root {
+  --main-bg-color: #F6F6F6;
+  --main-color: #9356DC;
+  --second-color: #FF79DA;
+}
+
+body {
+  margin: 0;
+}
+
+/****** button ***********/
+button {
+  background: linear-gradient(to top, var(--main-color), var(--second-color));
+  border-radius: 25px;
+  border: none;
+  color: var(--main-bg-color);
+  font-weight: 700;
+  height: 50px;
+  display: block;
+  margin: 0 auto;
+  padding: 0 20px;
+  cursor: pointer;
+  align-self: center;
+}
+
+button:hover {
+  transform: scale(1.2);
+  transition: transform 0.4s;
+}
+
+/****** Header ***********/
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+header img {
+  width: 200px;
+  height: auto;
+}
+
+footer {
+  background: black;
+  color: white;
+  padding: 20px;
+}
+
+footer img {
+  color: white;
+}
+
+footer .fa-handshake-angle {
+  padding-right: 10px;
+}
+
+footer .fa-utensils {
+  padding-right: 15px;
+}
+
+footer p:hover {
+  color: lightblue;
+}
+
+@media screen and (min-width: 765px) {
+  footer .footer-txt {
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+    gap: 20px;
+  }
+}/*# sourceMappingURL=style.css.map */

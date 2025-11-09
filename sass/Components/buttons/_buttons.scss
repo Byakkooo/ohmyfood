@@ -1,0 +1,21 @@
+/****** button ***********/
+
+button {
+    background: linear-gradient(to top, var(--main-color), var(--second-color));
+    border-radius: 25px;
+    border: none;
+    color: var(--main-bg-color);
+    font-weight: 700;
+    height: 50px;
+    display: block;
+    margin: 0 auto;
+    padding: 0 20px;
+    cursor: pointer;
+    align-self: center;      
+}
+
+
+button:hover {
+    transform: scale(1.2);
+    transition: transform 0.4s;
+}

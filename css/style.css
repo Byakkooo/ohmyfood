@@ -1,0 +1,263 @@
+
+
+/****** info ***********/
+.info {
+    background:var(--main-bg-color) ;
+}
+
+.location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 4px 4px 4px 4px #00000040;
+    color: #353535;
+    font-weight: bold;
+}
+    
+
+.info-group {
+    padding-bottom:40px ;
+}
+
+.info-group h1 {
+    text-align: center;
+    font-size: 24px;
+    padding-top:25px ;
+}
+
+.info-group p {
+    text-align: center;
+    font-size: 18px;
+    padding-bottom: 20px ;
+}
+
+/****** function ***********/
+
+.title-function {
+    padding-left: 20px;
+}
+
+.function {
+    padding-left: 30px;
+    padding-bottom: 30px;
+}
+
+.function a {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    color: black;
+    text-decoration: none;
+    background: var(--main-bg-color);
+    border: none;
+    border-radius: 15px;
+    height: 75px;
+    width: 90%;
+    box-shadow: 0px 4px 4px 0px #00000040;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    padding-left: 30px;
+}
+
+.function .number {
+    background: #9356dc;
+    color: white;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: -12px; /* le rond chevauche légèrement le bouton */
+    font-size: 14px;
+    position: relative;
+    z-index: 1; /* les chiffre passe au-dessus */
+}
+
+
+.function p {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-right: 20px;
+}
+
+.function a:hover i{
+    color: var(--main-color);
+}
+
+.function i {
+    padding-right: 30px;
+}
+
+
+/* RESTAURANT */
+
+.restaurant {
+    background: var(--main-bg-color);
+    padding-bottom: 50px;
+}
+
+.restaurant a {
+  text-decoration: none;
+  color: black;
+}
+
+.restaurant h1{
+    padding-top: 50px;
+    margin-left: 20px ;
+}
+
+.restaurant .card {
+    border-radius: 20px;
+    background: white;
+    margin: 20px;
+    position: relative;
+    overflow: hidden; /* utile pour éviter débordements */
+}
+
+/* IMAGE */
+.restaurant .card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+/* BADGE */
+.badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #99E2D0;
+    color: #1b6150;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 14px;
+    z-index: 1;
+}
+
+/* CARD CONTENT */
+.restaurant .card-content {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* TEXT */
+.card-txt {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-title {
+    margin: 0;
+    font-size: 18px;
+}
+
+.card-subtitle {
+    margin: 0;
+    font-size: 15px;
+    color: black;
+    padding-top: 10px;
+}
+
+/* HEART */
+.heart-container {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.heart-container input { 
+    display: none; /* cache la checkbox */ 
+} 
+
+.heart-container .fa-solid { 
+    display: none; /* cache le cœur plein par défaut */ 
+    color: var(--main-color); 
+} 
+
+.heart-container .fa-regular { 
+    color: var(--main-color); 
+} 
+
+/* Quand la checkbox est cochée → on montre le cœur plein */ 
+.heart-container input:checked ~ .fa-solid {        /* le "~" (general sibling selector) veut dire Quand la checkbox est cochée */ 
+    display: inline;                                /* CSS va agir sur tous les éléments .fa-solid qui viennent après le input.*/ 
+} 
+
+/*cache le cœur vide */ 
+.heart-container input:checked ~ .fa-regular { 
+    display: none; 
+}
+
+
+.card:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+}
+
+@media (min-width: 767.98px) {
+
+    /***FUNCTION****/
+
+    /* Conteneur aligné en ligne */
+    .function {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 40px; /* espace entre les trois blocs */
+        padding: 0 40px;
+    }
+
+    .function a {
+        width: 280px;    
+        height: 75px;
+        padding-left: 40px;
+        justify-content: flex-start;
+    }
+
+
+     /***RESTAURANT****/
+
+    .restaurant {
+        padding: 50px 100px; /* centrer la grille */
+    }
+
+    .restaurant h1 {
+        margin-left: 0;       /* centrer comme dans la maquette */
+        text-align: left;
+    }
+
+    /* Grille 2 colonnes */
+    .restaurant {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;            
+    }
+
+    /* Important : le titre doit prendre toute la largeur */
+    .restaurant h1 {
+        grid-column: 1 / -1; /*détermine sur quelles colonnes du Grid l’élément va s’étendre.*/
+    }
+
+    /* Cartes un peu plus grandes sur desktop */
+    .restaurant .card {
+        margin: 0;            /* plus besoin de margin, la grille s'en occupe */
+        height: 100%;
+    }
+
+    .restaurant .card img {
+        height: 200px; 
+    }
+
+ 
+}

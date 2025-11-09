@@ -1,0 +1,31 @@
+footer {
+    background: black;
+    color: white;
+    padding: 20px;
+}
+
+footer img {
+    color: white;
+}
+
+footer .fa-handshake-angle {
+    padding-right: 10px;
+}
+
+footer .fa-utensils {
+    padding-right: 15px;
+}
+
+footer p:hover {
+    color: lightblue;
+}
+
+@media screen and (min-width: 765px) {
+    
+    footer .footer-txt {
+        display: flex;
+        flex-direction: row;
+        align-items:end;
+        gap: 20px;
+    }
+}
