@@ -84,6 +84,7 @@
     align-items: center;
     margin-bottom: 20px;
     padding-right: 20px;
+    font-weight: bold;
 }
 
 .function a:hover i{
@@ -207,27 +208,39 @@
 
 @media (min-width: 767.98px) {
 
+    /***INFO****/
+
+    .info-group h1 {
+        font-size: 40px;
+    }
+
     /***FUNCTION****/
 
-    /* Conteneur aligné en ligne */
     .function {
         display: flex;
         justify-content: center;
         align-items: center;
         gap: 40px; /* espace entre les trois blocs */
-        padding: 0 40px;
+        padding-top: 100px;
+        position: relative; 
     }
 
-    .function a {
-        width: 280px;    
-        height: 75px;
-        padding-left: 40px;
-        justify-content: flex-start;
+    .function p {
+        flex: 1; 
+        display: flex;
+        align-items: center;
+        font-size: 16px;
     }
 
+    .title-function {
+        position: absolute;
+        top: 20px;
+        left: 20px; 
+    }
 
      /***RESTAURANT****/
 
+    
     .restaurant {
         padding: 50px 100px; /* centrer la grille */
     }

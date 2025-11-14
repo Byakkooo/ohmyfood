@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   font-family: "Raleway", sans-serif;
   -o-object-fit: cover;
@@ -68,11 +69,27 @@ footer p:hover {
   color: lightblue;
 }
 
-@media screen and (min-width: 765px) {
+footer .txt-bold {
+  font-weight: bold;
+}
+
+@media (min-width: 765px) {
+  /* Organisation en flex row pour footer-txt */
   footer .footer-txt {
     display: flex;
-    flex-direction: row;
-    align-items: end;
-    gap: 20px;
+    align-items: center;
+    justify-content: end; /* Distribution de l'espace */
+    padding-top: 15px;
+  }
+  footer p {
+    padding: 10px;
+  }
+  footer #separate {
+    padding-left: 30px;
+  }
+  /* Image à droite */
+  footer .footer-txt img {
+    order: 2; /* place l'image à la fin */
+    padding-left: 50px;
   }
 }/*# sourceMappingURL=style.css.map */
