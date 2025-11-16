@@ -15,6 +15,10 @@ body {
   margin: 0;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 /****** button ***********/
 button {
   background: linear-gradient(to top, var(--main-color), var(--second-color));
@@ -35,11 +39,25 @@ button:hover {
   transition: transform 0.4s;
 }
 
+a {
+  text-decoration: none;
+}
+
 /****** Header ***********/
 header {
   display: flex;
+  align-items: center;
   justify-content: center;
+  position: relative; /* permet de placer la flèche */
   padding: 20px;
+}
+
+header i {
+  position: absolute;
+  left: 20px; /* place la flèche à gauche */
+  top: 20px;
+  font-size: 30px;
+  color: black;
 }
 
 header img {
@@ -51,10 +69,6 @@ footer {
   background: black;
   color: white;
   padding: 20px;
-}
-
-footer img {
-  color: white;
 }
 
 footer .fa-handshake-angle {
@@ -92,4 +106,61 @@ footer .txt-bold {
     order: 2; /* place l'image à la fin */
     padding-left: 50px;
   }
+}
+.menu {
+  background-color: #F6F6F6;
+  margin-top: -70px; /* remonte sur l'image pour superposition */
+  border-radius: 40px 40px 0 0; /* arrondis en haut du blanc */
+  padding: 30px;
+  position: relative;
+}
+
+.menu h1 {
+  font-style: italic;
+  margin-bottom: 25px;
+}
+
+/* Titres des sections (Entrées, etc.) */
+.menu h2 {
+  margin-bottom: 10px;
+  border-bottom: 3px solid #56c9bc; /* trait turquoise sous-titre */
+  padding-bottom: 7px;
+}
+
+/* Carte individuelle */
+.card {
+  background: white;
+  border-radius: 15px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+}
+
+/* HEART */
+.heart-container {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.heart-container input {
+  display: none; /* cache la checkbox */
+}
+
+.heart-container .fa-solid {
+  display: none; /* cache le cœur plein par défaut */
+  color: var(--main-color);
+}
+
+.heart-container .fa-regular {
+  color: var(--main-color);
+}
+
+/* Quand la checkbox est cochée → on montre le cœur plein */
+.heart-container input:checked ~ .fa-solid { /* le "~" (general sibling selector) veut dire Quand la checkbox est cochée */
+  display: inline; /* CSS va agir sur tous les éléments .fa-solid qui viennent après le input.*/
+}
+
+/*cache le cœur vide */
+.heart-container input:checked ~ .fa-regular {
+  display: none;
 }/*# sourceMappingURL=style.css.map */

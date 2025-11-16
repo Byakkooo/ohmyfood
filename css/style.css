@@ -48,7 +48,6 @@
     align-items: center;
     justify-content: left;
     color: black;
-    text-decoration: none;
     background: var(--main-bg-color);
     border: none;
     border-radius: 15px;
@@ -104,7 +103,6 @@
 }
 
 .restaurant a {
-  text-decoration: none;
   color: black;
 }
 
@@ -114,11 +112,9 @@
 }
 
 .restaurant .card {
-    border-radius: 20px;
-    background: white;
     margin: 20px;
     position: relative;
-    overflow: hidden; /* utile pour éviter débordements */
+    padding: 0;
 }
 
 /* IMAGE */
@@ -133,8 +129,8 @@
 /* BADGE */
 .badge {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 15px;
+    right: 15px;
     background-color: #99E2D0;
     color: #1b6150;
     padding: 5px 10px;
@@ -170,36 +166,6 @@
     padding-top: 10px;
 }
 
-/* HEART */
-.heart-container {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-}
-
-.heart-container input { 
-    display: none; /* cache la checkbox */ 
-} 
-
-.heart-container .fa-solid { 
-    display: none; /* cache le cœur plein par défaut */ 
-    color: var(--main-color); 
-} 
-
-.heart-container .fa-regular { 
-    color: var(--main-color); 
-} 
-
-/* Quand la checkbox est cochée → on montre le cœur plein */ 
-.heart-container input:checked ~ .fa-solid {        /* le "~" (general sibling selector) veut dire Quand la checkbox est cochée */ 
-    display: inline;                                /* CSS va agir sur tous les éléments .fa-solid qui viennent après le input.*/ 
-} 
-
-/*cache le cœur vide */ 
-.heart-container input:checked ~ .fa-regular { 
-    display: none; 
-}
-
 
 .card:hover {
     transform: translateY(-5px);
@@ -226,10 +192,13 @@
     }
 
     .function p {
-        flex: 1; 
         display: flex;
         align-items: center;
         font-size: 16px;
+    }
+
+    .function a {
+        padding-right: 50px;
     }
 
     .title-function {
@@ -274,3 +243,5 @@
 
  
 }
+
+

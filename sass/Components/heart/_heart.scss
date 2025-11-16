@@ -1,0 +1,29 @@
+/* HEART */
+.heart-container {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.heart-container input { 
+    display: none; /* cache la checkbox */ 
+} 
+
+.heart-container .fa-solid { 
+    display: none; /* cache le cœur plein par défaut */ 
+    color: var(--main-color); 
+} 
+
+.heart-container .fa-regular { 
+    color: var(--main-color); 
+} 
+
+/* Quand la checkbox est cochée → on montre le cœur plein */ 
+.heart-container input:checked ~ .fa-solid {        /* le "~" (general sibling selector) veut dire Quand la checkbox est cochée */ 
+    display: inline;                                /* CSS va agir sur tous les éléments .fa-solid qui viennent après le input.*/ 
+} 
+
+/*cache le cœur vide */ 
+.heart-container input:checked ~ .fa-regular { 
+    display: none; 
+}
