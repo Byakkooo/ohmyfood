@@ -107,6 +107,13 @@ footer .txt-bold {
     padding-left: 50px;
   }
 }
+.menu-img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 .menu {
   background-color: #F6F6F6;
   margin-top: -70px; /* remonte sur l'image pour superposition */
@@ -118,21 +125,61 @@ footer .txt-bold {
 .menu h1 {
   font-style: italic;
   margin-bottom: 25px;
+  position: relative;
+}
+
+.heart-container {
+  position: relative;
+  left: 90%;
+  bottom: 50px;
 }
 
 /* Titres des sections (Entrées, etc.) */
 .menu h2 {
+  position: relative;
+  padding-bottom: 8px;
+  padding-top: 25px;
+  margin-bottom: 25px;
+  font-weight: 500;
+}
+
+.menu h2::after { /* ::after est un pseudo-élément CSS, un élément virtuel juste après le contenu d’un élément*/
+  content: ""; /* On crée un élément vide */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 3px;
+  width: 50px;
+  background-color: #56c9bc;
+}
+
+.menu button {
+  margin-top: 50px;
   margin-bottom: 10px;
-  border-bottom: 3px solid #56c9bc; /* trait turquoise sous-titre */
-  padding-bottom: 7px;
+  padding: 0 50px;
 }
 
 /* Carte individuelle */
 .card {
   background: white;
   border-radius: 15px;
-  padding: 15px 20px;
+  padding: 1px 20px;
   margin-bottom: 15px;
+}
+
+.desc {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.desc p {
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.desc .euro {
+  font-weight: bold;
 }
 
 /* HEART */

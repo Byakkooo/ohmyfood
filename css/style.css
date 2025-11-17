@@ -207,6 +207,10 @@
         left: 20px; 
     }
 
+    .function .number {
+        width: 33px;    /* calibrage des cercles */
+    }
+
      /***RESTAURANT****/
 
     
