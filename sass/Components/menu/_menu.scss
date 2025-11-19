@@ -14,14 +14,15 @@
 
 .menu h1 {
     font-style: italic;
-    margin-bottom: 25px;
+    margin-bottom: 0;
     position: relative;
 }
 
-.heart-container {
+.heart-menu .heart-container {
     position: relative;
     left: 90%;
-    bottom: 50px;
+    bottom: 30px;
+    font-size: 25px;
 }
 
 /* Titres des sections (Entrées, etc.) */
@@ -42,19 +43,88 @@
     background-color: #56c9bc;
 }
 
+.card-menu h3 {
+    font-size: 16px;  /* plus petit comme sur la maquette */
+    margin: 0 0 6px 0; /* très peu d'espace */
+}
+
 .menu button {
     margin-top: 50px;
     margin-bottom: 10px;
     padding: 0 50px;
 }
 
-/* Carte individuelle */
-.card {
+/* ---- STYLE DES CARTES ---- */
+.card-menu {
     background: white;
     border-radius: 15px;
-    padding: 1px 20px;
+    padding: 10px 20px;
     margin-bottom: 15px;
+    position: relative;  /* Permet de positionner ::after à l'intérieur */
+    cursor: pointer; /* Change la souris → élément cliquable */
+    overflow: hidden; /* Coupe ce qui dépasse de la carte */
 }
+
+/* Checkbox INVISIBLE mais cliquable sur toute la carte */
+
+.card-menu .select-card {
+    position: absolute;
+    inset: 0; /* top, right, bottom, left à 0 = couvre toute la carte */
+    opacity: 0; /* Rend invisible */
+    cursor: pointer; /* Évite le curseur par défaut */
+}
+
+/* ---- ZONE VERTE AVEC ICÔNE DE VALIDATION ---- */
+.card-menu::after {
+    content: "\f058"; /* icône Font Awesome (check) */
+    font-family: "Font Awesome 6 Free"; /* Police nécessaire pour l'icône */
+    font-weight: 900;
+    color: white;
+    background-color: #56c9bc;
+    width: 0; /* Caché par défaut */
+    height: 100%;
+    position: absolute;
+    right: 0; /* Collé à droite */
+    top: 0;
+    display: flex; /* Centre l’icône */
+    justify-content: center;
+    align-items: center;
+    transition: width 0.3s ease; /* Animation quand il apparaît */
+    font-size: 22px;
+}
+
+/* ---- PRIX QUI SE DÉCALE ---- */
+.desc .euro {
+    transition: transform 0.3s ease; /* Animation fluide du déplacement */
+}
+
+/* ---- EFFET AU SURVOL ---- */
+.card-menu:hover::after {
+    width: 70px; /* Affiche la zone verte */
+}
+.card-menu:hover .desc .euro {
+    transform: translateX(-70px); /* Le prix se décale vers la gauche */
+}
+
+
+/* 
+   Sélecteur CSS avancé utilisant :has()
+     .card-menu:has(.select-card:checked) cible la carte SEULEMENT si elle contient
+     une checkbox (.select-card) cochée (:checked).
+   Cela permet d'appliquer le style en "mode sélectionné" sans JavaScript.
+
+   ::after est alors activé pour afficher la zone verte avec le check ✔️
+   et le prix (.euro) se décale de façon PERMANENTE, même après le hover.
+*/
+
+/* ---- EFFET AU CLIC (reste affiché) ---- */
+.card-menu:has(.select-card:checked)::after {
+    width: 70px; /* La zone verte reste visible */
+}
+.card-menu:has(.select-card:checked) .desc .euro {
+    transform: translateX(-70px); /* Le prix reste décalé */
+}
+
 
 .desc {
     display: flex;
@@ -71,5 +141,10 @@
 }
 
 @media (min-width: 767.98px) {
-
+    .menu {
+        margin-left: 10%;
+        margin-right: 10%;
+        padding-left: 10%;
+        padding-right: 10%;
+    }
 }
