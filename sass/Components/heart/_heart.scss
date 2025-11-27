@@ -27,3 +27,10 @@
 .heart-container input:checked ~ .fa-regular { 
     display: none; 
 }
+
+
+.card-wrapper .heart-container {
+    bottom: 80px;
+    left: 90%;
+    font-size: 130%;
+}

@@ -21,6 +21,8 @@
     font-style: italic;
     margin-bottom: 0;
     position: relative;
+    font-family: Shrikhand;
+    font-weight: bold;
 }
 
 .heart-menu .heart-container {
@@ -130,6 +132,16 @@
     transform: translateX(-70px); /* Le prix reste décalé */
 }
 
+/* Appliquer sur le titre et la description */
+.card-menu h3,
+.card-menu .desc p {
+    white-space: nowrap;      /* Le texte reste sur une seule ligne */
+    overflow: hidden;         /* Cache ce qui dépasse */
+    text-overflow: ellipsis;  /* Ajoute … à la fin */
+    max-width: calc(100% - 120px);
+    
+}
+
 
 .desc {
     display: flex;
@@ -151,5 +163,9 @@
         margin-right: 10%;
         padding-left: 10%;
         padding-right: 10%;
+    }
+
+    .menu h1{
+        text-align: center;
     }
 }
