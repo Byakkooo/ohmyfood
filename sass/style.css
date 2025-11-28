@@ -247,13 +247,15 @@ footer .txt-bold {
   transform: translateX(-70px); /* Le prix reste décalé */
 }
 
-/* Appliquer sur le titre et la description */
-.card-menu h3,
-.card-menu .desc p {
-  white-space: nowrap; /* Le texte reste sur une seule ligne */
-  overflow: hidden; /* Cache ce qui dépasse */
-  text-overflow: ellipsis; /* Ajoute … à la fin */
-  max-width: calc(100% - 120px);
+/* Texte TRONQUÉ (… ) au survol ou au clic */
+.card-menu:hover h3,
+.card-menu:hover .desc p,
+.card-menu:has(.select-card:checked) h3,
+.card-menu:has(.select-card:checked) .desc p {
+  white-space: nowrap; /* Une seule ligne */
+  overflow: hidden; /* Coupe */
+  text-overflow: ellipsis; /* Ajoute … */
+  max-width: calc(100% - 120px); /* Évite de toucher la zone verte */
 }
 
 .desc {
