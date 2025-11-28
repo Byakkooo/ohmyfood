@@ -35,12 +35,14 @@
 /****** function ***********/
 
 .title-function {
-    padding-left: 85px;
+    padding-left: 5px;
 }
 
 .function {
-    padding-left: 30px;
     padding-bottom: 30px;
+    max-width: 1250px;
+    margin-left: 80px;   
+    margin-right: 80px;
 }
 
 .function a {
