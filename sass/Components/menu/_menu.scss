@@ -34,12 +34,15 @@
 
 /* Titres des sections (Entrées, etc.) */
 .menu h2 {
+    font-family: Roboto;
     position: relative;
     padding-bottom: 8px;
     padding-top: 25px;
     margin-bottom: 25px;
-    font-weight: 500;
+    font-weight: 100;
 }
+
+
 .menu h2::after {      /* ::after est un pseudo-élément CSS, un élément virtuel juste après le contenu d’un élément*/
     content: "";        /* On crée un élément vide */
     position: absolute;
@@ -51,6 +54,7 @@
 }
 
 .card-menu h3 {
+    font-family: Roboto;
     font-size: 16px;  /* plus petit comme sur la maquette */
     margin: 0 0 6px 0; /* très peu d'espace */
 }
@@ -118,7 +122,7 @@
    Sélecteur CSS avancé utilisant :has()
      .card-menu:has(.select-card:checked) cible la carte SEULEMENT si elle contient
      une checkbox (.select-card) cochée (:checked).
-   Cela permet d'appliquer le style en "mode sélectionné" sans JavaScript.
+   
 
    ::after est alors activé pour afficher la zone verte avec le check ✔️
    et le prix (.euro) se décale de façon PERMANENTE, même après le hover.
@@ -133,7 +137,7 @@
 }
 
 
-/* Texte TRONQUÉ (… ) au survol ou au clic */
+/*  (… ) au survol ou au clic */
 .card-menu:hover h3,
 .card-menu:hover .desc p,
 .card-menu:has(.select-card:checked) h3,
@@ -141,7 +145,7 @@
     white-space: nowrap;           /* Une seule ligne */
     overflow: hidden;              /* Coupe */
     text-overflow: ellipsis;       /* Ajoute … */
-    max-width: calc(100% - 120px); /* Évite de toucher la zone verte */
+    max-width: calc(100% - 120px); 
 }
 
 
@@ -150,6 +154,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    font-family: Roboto;
 }
 .desc p {
     margin: 0;
@@ -158,6 +163,15 @@
 
 .desc .euro {
     font-weight: bold;
+}
+
+footer img {
+    padding-bottom: 10px;
+}
+
+footer p {
+    font-family: Roboto;
+    padding-bottom: 10px;
 }
 
 @media (min-width: 767.98px) {

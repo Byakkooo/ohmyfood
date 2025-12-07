@@ -31,6 +31,12 @@
 
 .card-wrapper .heart-container {
     bottom: 80px;
-    left: 90%;
+    left: 85%;
     font-size: 130%;
+}
+
+@media (min-width: 767.98px) {
+    .menu .heart-container {
+        left: 77%;
+    }
 }

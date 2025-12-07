@@ -1,6 +1,8 @@
 * {
-    font-family: 'Raleway', sans-serif;
     object-fit: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 :root {
@@ -9,14 +11,13 @@
     --second-color: #FF79DA;
 }
 
-body {
-    margin: 0;
-}
 
 html {
   scroll-behavior: smooth;
 }
 
-body{
+.main-contenair{
     max-width: 1440px;
+     margin: 0 auto;
 }
+
