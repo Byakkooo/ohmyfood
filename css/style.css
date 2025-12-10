@@ -179,6 +179,92 @@ h1, h2, h3, p, span {
     transition: transform 0.3s;
 }
 
+
+/* =======================
+         LOADER
+======================= */
+/* =======================
+       LOADER FULLSCREEN
+======================= */
+#loader {
+    position: fixed;              /* Le loader reste fixé par-dessus toute la page */
+    inset: 0;                     /* Equivalent de top:0; right:0; bottom:0; left:0 */
+    background-color: #ffffff;    /* Fond blanc (charte OhMyFood) */
+    display: flex;                /* Centre le contenu facilement */
+    justify-content: center;      /* Centre horizontalement */
+    align-items: center;          /* Centre verticalement */
+    flex-direction: column;       /* Logo + cercle l’un en dessous de l’autre */
+    gap: 20px;                    /* Espace entre logo et cercle */
+
+    /* Animation qui fait disparaître le loader */
+    animation: hideLoader 2s ease forwards;
+    animation-delay: 1.3s;        /* Durée pendant laquelle le loader reste visible */
+}
+
+/* Animation CSS qui rend le loader invisible (opacity + visibility) */
+@keyframes hideLoader {
+    to {
+        opacity: 0;               /* Devient transparent */
+        visibility: hidden;       /* N’occupe plus d’espace visuel */
+    }
+}
+
+/* Logo animé (léger zoom/respiration) */
+#loader img {
+    width: 140px;
+    animation: appear 0.8s ease-in-out infinite alternate;
+}
+
+/* Cercle de chargement animé */
+.loader-circle {
+    width: 70px;
+    height: 70px;
+    border: 6px solid #9356DC;    /* Couleur principale OhMyFood */
+    border-top-color: transparent;/* Crée un effet d’anneau tournant */
+    border-radius: 50%;           /* Cercle parfait */
+    animation: spin 1s linear infinite;
+}
+
+/* Animation de rotation du cercle */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+/* Effet de respiration sur le logo */
+@keyframes appear {
+    from { opacity: 0.4; transform: scale(0.9); }
+    to   { opacity: 1; transform: scale(1.05); }
+}
+
+
+/* =======================
+   AFFICHAGE DU CONTENU
+======================= */
+
+/* Le contenu est présent dès le début,
+   mais simplement invisible avant la fin du loader */
+.main-contenair {
+    opacity: 0;                /* Invisible */
+    visibility: hidden;        /* Non interactif */
+    transition: opacity 0.5s;  /* Effet de fondu */
+    
+    /* Le contenu devient visible après l’animation du loader */
+    animation: showMain 0s forwards step-end;
+    animation-delay: 1.8s;     /* Doit correspondre au temps total du loader */
+}
+
+/* Animation qui rend visible la page */
+@keyframes showMain {
+    to {
+        opacity: 1;            /* Apparition progressive */
+        visibility: visible;   /* Deviens interactif */
+    }
+}
+
+
+
+
+
 @media (min-width: 767.98px) {
 
     /***INFO****/
