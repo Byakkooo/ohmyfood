@@ -183,13 +183,11 @@ h1, h2, h3, p, span {
 /* =======================
          LOADER
 ======================= */
-/* =======================
-       LOADER FULLSCREEN
-======================= */
+
 #loader {
     position: fixed;              /* Le loader reste fixé par-dessus toute la page */
     inset: 0;                     /* Equivalent de top:0; right:0; bottom:0; left:0 */
-    background-color: #ffffff;    /* Fond blanc (charte OhMyFood) */
+    background-color: #ffffff;    /* Fond blanc */
     display: flex;                /* Centre le contenu facilement */
     justify-content: center;      /* Centre horizontalement */
     align-items: center;          /* Centre verticalement */

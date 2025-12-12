@@ -12,12 +12,16 @@ footer .fa-utensils {
     padding-right: 15px;
 }
 
-footer p:hover {
+footer p:hover, footer a:hover {
     color: lightblue;
 }
 
 footer .txt-bold {
     font-weight: bold;
+}
+
+footer a {
+    color: white;
 }
 
 @media (min-width: 765px) {

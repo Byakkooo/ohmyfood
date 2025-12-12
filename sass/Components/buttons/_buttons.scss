@@ -16,8 +16,12 @@ button {
 
 
 button:hover {
-    transform: scale(1.2);
-    transition: transform 0.4s;
+    background: linear-gradient(
+        to top,
+        /* couleurs légèrement éclaircies */
+        color-mix(in srgb, var(--main-color) 80%, white),
+        color-mix(in srgb, var(--second-color) 80%, white)
+    );
 }
 
 a {

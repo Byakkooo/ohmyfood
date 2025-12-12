@@ -1,3 +1,45 @@
+
+/* Animation d'apparition */
+@keyframes fadeSlide {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Toutes les cartes sont invisibles au début */
+.card-menu {
+    opacity: 0;
+    animation: fadeSlide 0.6s ease forwards;
+}
+
+/*
+    nth-child() = sélectionne l'ENFANT numéro X dans une liste d'éléments frères.
+
+    Ici, on applique un délai différent à chaque carte pour qu'elles
+    apparaissent une par une.
+*/
+
+/* Délais progressifs dans chaque section */
+.cards .card-menu:nth-child(1) {
+    animation-delay: 0.2s;
+}
+.cards .card-menu:nth-child(2) {
+    animation-delay: 0.4s;
+}
+.cards .card-menu:nth-child(3) {
+    animation-delay: 0.6s;
+}
+.cards .card-menu:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+
+
 .menu-img {
     width: 100%;
     object-fit:cover;
@@ -132,6 +174,7 @@
 .card-menu:has(.select-card:checked)::after {
     width: 70px; /* La zone verte reste visible */
 }
+
 .card-menu:has(.select-card:checked) .desc .euro {
     transform: translateX(-70px); /* Le prix reste décalé */
 }
